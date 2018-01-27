@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ahoj, já jsem Beemo</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://localhost:4000/feed.xml">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=VT323&amp;subset=latin-ext" rel="stylesheet">
+</head>
+
+
+  <body>
+
+    <div class="home">
+  <div class="text-beemo-error">
+    Aaaaa, princezna Žvejkačka je zraněná? Aaaaaa...  CHYBA SYSTÉMU!!!
+    ZKRAT!! ZKRAT! CHYBA SYSTÉMU! blbbabasbalbb balb...
+    <span class="red">11 24 37 51 65 80 95 111 127 ???</span>
+  </div>
+  <div class="text-beemo-normal">
+    Promiňte, trochu mi z té zprávy přeskočilo, ale vy jste mě naštěstí opravili. Rád Vám pomůžů kousky princezny Žvejkačky lokalizovat.
+    <span class="red">Prosím, zadejte kód pro hledání</span>
+  </div>
+  <input class="error-input">
+  <input class="normal-input">
+  <span class="gps-text"></span>
+  <button class="button-reset">reset</button>
+  <button id="show" class="button">ok</button>
+</div>
+
+<script>
+    $(document).ready(function() {
+        const $button = $('#show');
+        const $errorInput = $('.error-input');
+        const $normalInput = $('.normal-input');
+        const $textError = $('.text-beemo-error');
+        const $textNormal = $('.text-beemo-normal');
+        const $gpsText = $('.gps-text');
+        const $resetButton = $('.button-reset');
+
+        $resetButton.on('click', function () {
+          $errorInput.add($normalInput).val('');
+          $gpsText.text('');
+        });
+
+        $button.on('click', function () {
+          if ($errorInput.val() === '144') {
+            $textError.hide();
+            $textNormal.show();
+            $errorInput.hide();
+            $normalInput.show();
+          }
+          if ($normalInput.val() === 'G41PD') {
+              $gpsText.text('49.947964, 15.242516');
+          } else if ($normalInput.val() === '54TYF') {
+              $gpsText.text('49.947799, 15.242515');
+          } else if ($normalInput.val() === 'WLI1J') {
+              $gpsText.text('49.947935, 15.242729');
+          } else if ($normalInput.val() === 'QN2G9') {
+              $gpsText.text('49.947671, 15.242599');
+          }
+        });
+    });
+</script>
+
+
+  </body>
+
+</html>
