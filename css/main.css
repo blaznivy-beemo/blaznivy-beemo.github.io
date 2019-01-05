@@ -477,7 +477,7 @@ body {
 .text-beemo-error, .text-beemo-normal {
   position: absolute;
   top: 10%;
-  left: 40%;
+  left: 42%;
   width: 300px;
   font-family: 'VT323', monospace;
   font-size: 20px; }
